@@ -1,0 +1,4 @@
+#Sun Jan 07 23:52:35 IST 2018
+base.0=/Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/build/intermediates/transforms/dexMerger/debug/23
+path.0=classes.dex
+renamed.0=classes.dex

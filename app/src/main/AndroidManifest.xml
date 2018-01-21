@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".TableListActivity" />
         <activity android:name=".TableOptionsActivity" />
-        <activity android:name=".NewGuestActivity"></activity>
+        <activity android:name=".NewGuestActivity" />
+        <activity android:name=".NewTableActivity"></activity>
     </application>
 
 </manifest>

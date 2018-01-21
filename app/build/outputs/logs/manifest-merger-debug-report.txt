@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
+ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
 MERGED from [com.android.support:design:26.1.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/ffe080b17650c1bbbce00f09e9cb8ce6/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/dbdaeb4d840d702be4dc8127c40c577f/AndroidManifest.xml:17:1-31:12
 MERGED from [com.jakewharton:butterknife:8.8.1] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/d8f856824faf7b5758e1d52e3fae6448/AndroidManifest.xml:2:1-7:12
@@ -19,25 +19,25 @@ MERGED from [com.android.support:support-media-compat:26.1.0] /Users/plank-dhami
 MERGED from [com.android.support:support-core-utils:26.1.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/2cb94be05f6a1987d96e78ebda48f11e/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/0fceed38fb92618bf5f8969afe947765/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/f8c5304266956ca82a216290582867e5/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
 	package
 		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:3:5-43
 		INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml
-		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
+		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
 		INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml
-		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-24:12
+		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:1-25:12
 		INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:5:5-22:19
+ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:5:5-23:19
 MERGED from [com.android.support:design:26.1.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/ffe080b17650c1bbbce00f09e9cb8ce6/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/ffe080b17650c1bbbce00f09e9cb8ce6/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/dbdaeb4d840d702be4dc8127c40c577f/AndroidManifest.xml:25:5-29:19
@@ -101,9 +101,13 @@ ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidMani
 	android:name
 		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:20:19-55
 activity#com.project.msrit.urbanspoon.NewGuestActivity
-ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:21:9-63
+ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:21:9-54
 	android:name
 		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:21:19-51
+activity#com.project.msrit.urbanspoon.NewTableActivity
+ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:22:9-63
+	android:name
+		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:22:19-51
 uses-sdk
 INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml

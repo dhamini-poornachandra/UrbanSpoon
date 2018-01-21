@@ -28,4 +28,16 @@
         android:paddingRight="30dp"
         android:text="Add new guest" />
 
+    <Button
+        android:id="@+id/add_new_table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_new_guest"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:background="@color/colorAccent"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Add new guest" />
+
 </RelativeLayout>

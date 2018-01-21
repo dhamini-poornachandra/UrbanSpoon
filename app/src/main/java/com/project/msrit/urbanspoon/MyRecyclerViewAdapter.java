@@ -38,8 +38,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         //set view data here
-        String tablePostion = mData.get(position);
-        holder.tableName.setText(tablePostion);
+        String tablePosition = mData.get(position);
+        holder.tableName.setText(tablePosition);
     }
 
     // total number of rows

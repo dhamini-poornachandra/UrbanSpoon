@@ -27,6 +27,7 @@
         <activity android:name="com.project.msrit.urbanspoon.TableListActivity" />
         <activity android:name="com.project.msrit.urbanspoon.TableOptionsActivity" />
         <activity android:name="com.project.msrit.urbanspoon.NewGuestActivity" />
+        <activity android:name="com.project.msrit.urbanspoon.NewTableActivity" />
 
         <meta-data
             android:name="android.support.VERSION"

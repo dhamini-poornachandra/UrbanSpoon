@@ -33,4 +33,9 @@ public class TableOptionsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.add_new_table)
+    public void onClickAddNewTAble() {
+        startActivity(new Intent(TableOptionsActivity.this, NewTableActivity.class));
+    }
+
 }

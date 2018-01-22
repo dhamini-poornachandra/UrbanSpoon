@@ -36,6 +36,10 @@ INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidM
 		INJECTED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.SEND_SMS
+ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:4:5-66
+	android:name
+		ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:4:22-64
 application
 ADDED from /Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/src/main/AndroidManifest.xml:5:5-23:19
 MERGED from [com.android.support:design:26.1.0] /Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/ffe080b17650c1bbbce00f09e9cb8ce6/AndroidManifest.xml:25:5-29:19

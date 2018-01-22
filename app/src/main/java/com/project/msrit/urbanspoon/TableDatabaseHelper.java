@@ -14,31 +14,29 @@ import android.util.Log;
 public class TableDatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_Name = "urbanSpoon";
     private static final String availability_list = "table_availability";
-    //    private static final String guest_list = "guest";
+
     private static final String availability_list_col_1 = "ID";
     private static final String availability_list_col_2 = "Tablename";
     private static final String availability_list_col_3 = "Available";
-//    private static final String guest_list_col_1 = "ID";
-//    private static final String guest_list_col_2 = "Name";
-//    private static final String guest_list_col_3 = "Phno";
+
 
     public TableDatabaseHelper(Context context) {
-        super(context, DB_Name, null, 8);
+        super(context, DB_Name, null, 29);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String query1 = "Create table " + availability_list + "(" + availability_list_col_1 + " Integer Primary key AutoIncrement, " + availability_list_col_2 + " text, " + availability_list_col_3 + " Boolean )";
-//        String query2 = "Create table " + guest_list + "(" + guest_list_col_2 + " text, " + guest_list_col_3 + " Boolean )";
+        String query1 = "Create table " + availability_list + "(" + availability_list_col_1 + " Integer Primary key AutoIncrement, "
+                + availability_list_col_2 + " text, " + availability_list_col_3 + " Boolean )";
+
 
         sqLiteDatabase.execSQL(query1);
-//        sqLiteDatabase.execSQL(query2);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + availability_list);
-//        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + guest_list);
         onCreate(sqLiteDatabase);
     }
 
@@ -79,14 +77,9 @@ public class TableDatabaseHelper extends SQLiteOpenHelper {
 //    }
 
     public int remove_table(String name) {
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        String delete = "Delete from " + guest_list + " where rowid in (select rowid from " + guest_list + " limit 1)";
-//        sqLiteDatabase.execSQL(delete);
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         int deleted = sqLiteDatabase.delete("table_availability", "Tablename = ?", new String[]{name});
-//        String delete = "Delete from studentinfo1 where rowid in (select rowid from studentinfo1 limit 1)";
-//        sqLiteDatabase.execSQL(delete);
         return deleted;
     }
 

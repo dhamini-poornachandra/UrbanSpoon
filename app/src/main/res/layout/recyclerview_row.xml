@@ -20,6 +20,7 @@
         android:text="Table 1" />
 
     <Button
+        android:id="@+id/book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -27,9 +28,9 @@
         android:text="Book" />
 
     <ImageView
-        android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_below="@+id/unbook_button"
         android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="1dp" />
+        android:background="#000" />
 </RelativeLayout>

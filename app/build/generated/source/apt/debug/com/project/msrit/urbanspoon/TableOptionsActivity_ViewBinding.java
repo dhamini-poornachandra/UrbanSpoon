@@ -13,7 +13,7 @@ import java.lang.Override;
 public class TableOptionsActivity_ViewBinding implements Unbinder {
   private TableOptionsActivity target;
 
-  private View view2131230908;
+  private View view2131230910;
 
   private View view2131230748;
 
@@ -30,7 +30,7 @@ public class TableOptionsActivity_ViewBinding implements Unbinder {
 
     View view;
     view = Utils.findRequiredView(source, R.id.view_all_tables, "method 'onClickViewAllTables'");
-    view2131230908 = view;
+    view2131230910 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -62,8 +62,8 @@ public class TableOptionsActivity_ViewBinding implements Unbinder {
     target = null;
 
 
-    view2131230908.setOnClickListener(null);
-    view2131230908 = null;
+    view2131230910.setOnClickListener(null);
+    view2131230910 = null;
     view2131230748.setOnClickListener(null);
     view2131230748 = null;
     view2131230749.setOnClickListener(null);

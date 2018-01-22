@@ -1,15 +1,18 @@
 package com.project.msrit.urbanspoon;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 /**
  * Created by dhamini-poorna-chandra on 08/01/18.
@@ -20,27 +23,23 @@ public class TableListActivity extends AppCompatActivity implements MyRecyclerVi
 
     MyRecyclerViewAdapter adapter;
     TableDatabaseHelper dbHelper;
-    ArrayList<String> tables = new ArrayList<>();
+    private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 0;
+    //    ArrayList<String> tables = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_list);
         dbHelper = new TableDatabaseHelper(getApplicationContext());
+        GlobalVariable.getInstance().acitivity = this;
         displayAll();
-        // data to populate the RecyclerView with
-//
-//        tables.add("Table 1");
-//        tables.add("Table 2");
-//        tables.add("Table 3");
-//        tables.add("Table 4");
-//        tables.add("Table 5");
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MyRecyclerViewAdapter(this, tables);
+        adapter = new MyRecyclerViewAdapter(this, GlobalVariable.getInstance().tablesList);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
+
     }
 
     @Override
@@ -49,19 +48,62 @@ public class TableListActivity extends AppCompatActivity implements MyRecyclerVi
     }
 
     private void displayAll() {
-
+        GlobalVariable.getInstance().tablesList.clear();
         Cursor result = dbHelper.view_all();
         if (result.getCount() == 0) {
             Log.d("Error", "Nothing to show");
         } else {
-//            StringBuffer stringBuffer = new StringBuffer();
 
             while (result.moveToNext()) {
-                tables.add(result.getString(1) + "\n");
-//                stringBuffer.append("Name: " + result.getString(1) + "\n");
-//                stringBuffer.append("Availability: " + result.getString(2) + "\n");
+                Tables table = new Tables();
+                table.withTableName(result.getString(1));
+                table.withAvaliablilty(Boolean.valueOf(result.getString(2)));
+                GlobalVariable.getInstance().tablesList.add(table);
             }
-//            Toast.makeText(this, stringBuffer.toString(), Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void sendSMSMessage() {
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.SEND_SMS)) {
+
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.SEND_SMS},
+                        MY_PERMISSIONS_REQUEST_SEND_SMS);
+            }
+        } else {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(GlobalVariable.getInstance().phoneNumber, null,
+                    GlobalVariable.getInstance().message, null, null);
+            Toast.makeText(getApplicationContext(), "SMS sent.",
+                    Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_SEND_SMS: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(GlobalVariable.getInstance().phoneNumber, null,
+                            GlobalVariable.getInstance().message, null, null);
+                    Toast.makeText(getApplicationContext(), "SMS sent.",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "SMS failed, please try again.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+        }
+
+    }
+
 }

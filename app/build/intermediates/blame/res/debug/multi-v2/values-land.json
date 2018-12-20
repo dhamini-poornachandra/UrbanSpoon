@@ -4,17 +4,7 @@
             "outputFile": "/Users/plank-dhamini/Desktop/Work/UrbanSpoon/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/dbdaeb4d840d702be4dc8127c40c577f/res/values-land/values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,125,189,260",
-                        "endColumns": "69,63,70,67",
-                        "endOffsets": "120,184,255,323"
-                    }
-                },
-                {
-                    "source": "/Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/ffe080b17650c1bbbce00f09e9cb8ce6/res/values-land/values-land.xml",
+                    "source": "/Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/8c487a4e636b3a0b602850fee5e552d5/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "9",
                         "endColumns": "12",
                         "endOffsets": "505"
+                    }
+                },
+                {
+                    "source": "/Users/plank-dhamini/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/8daaf7fd55c57616534533c6239f22b7/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,125,189,260",
+                        "endColumns": "69,63,70,67",
+                        "endOffsets": "120,184,255,323"
                     }
                 }
             ]

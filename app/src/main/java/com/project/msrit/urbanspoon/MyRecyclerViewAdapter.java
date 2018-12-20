@@ -24,7 +24,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
     Context context;
-    GuestDatabaseHelper guestDbHelper;
+    TableDatabaseHelper guestDbHelper;
 
     // data is passed into the constructor
     MyRecyclerViewAdapter(Context context, List<Tables> data) {
@@ -39,7 +39,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         View view = mInflater.inflate(R.layout.recyclerview_row, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         dbHelper = new TableDatabaseHelper(view.getContext());
-        guestDbHelper = new GuestDatabaseHelper(view.getContext());
+        guestDbHelper = new TableDatabaseHelper(view.getContext());
         return viewHolder;
     }
 
@@ -151,7 +151,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     private void displayAllGuests(Integer pos) {
 
-        Cursor result = guestDbHelper.view_all();
+        Cursor result = guestDbHelper.view_allguest();
 
         if (result.getCount() == 0) {
             Toast.makeText(context, "No guests in queue", Toast.LENGTH_LONG).show();
@@ -162,7 +162,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             while (nextGuest.moveToNext()) {
                 if (context instanceof TableListActivity) {
                     GlobalVariable.getInstance().phoneNumber = nextGuest.getString(1);
-                    GlobalVariable.getInstance().message = "Hi, " + nextGuest.getString(0) + "Your table is ready to be occupied";
+                    GlobalVariable.getInstance().message = "Hi, " + nextGuest.getString(0) + " Your table is ready to be occupied";
 
                     ((TableListActivity) context).sendSMSMessage();
                 }

@@ -16,8 +16,17 @@
         android:id="@+id/table_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Table 1" />
+        android:layout_centerHorizontal="true"
+        android:text="Table 1"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/table_capacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/table_name"
+        android:layout_centerHorizontal="true"
+        android:text="Capacity: 2" />
 
     <Button
         android:id="@+id/book"

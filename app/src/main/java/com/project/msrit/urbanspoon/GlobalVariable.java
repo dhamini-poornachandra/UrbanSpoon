@@ -1,8 +1,5 @@
 package com.project.msrit.urbanspoon;
 
-import android.app.Activity;
-import android.content.Context;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +11,8 @@ public class GlobalVariable {
     private static GlobalVariable instance;
     ArrayList<Tables> tablesList = new ArrayList<>();
     private List<Tables> tables;
-    Activity acitivity;
     String phoneNumber;
     String message;
-    Context cntx;
 
     private GlobalVariable() {
     }

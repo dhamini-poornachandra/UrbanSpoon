@@ -1,10 +1,12 @@
 package com.project.msrit.urbanspoon;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -31,7 +33,7 @@ public class NewGuestActivity extends AppCompatActivity {
     @BindView(R.id.view)
     RelativeLayout view;
 
-    GuestDatabaseHelper dbHelper;
+    TableDatabaseHelper dbHelper;
 
     private final TextWatcher watcher = new TextWatcher() {
         @Override
@@ -65,18 +67,23 @@ public class NewGuestActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         guestName.addTextChangedListener(watcher);
         phoneNumber.addTextChangedListener(watcher);
-        dbHelper = new GuestDatabaseHelper(this);
+        dbHelper = new TableDatabaseHelper(this);
     }
 
     @OnClick(R.id.add_guest)
     public void addNewGuest() {
-        dbHelper = new GuestDatabaseHelper(this);
-        Boolean inserted = dbHelper.add_entry(guestName.getText().toString(), phoneNumber.getText().toString());
+        dbHelper = new TableDatabaseHelper(this);
+        Boolean inserted = dbHelper.add_entry_guest(guestName.getText().toString(), phoneNumber.getText().toString());
 
         if (inserted) {
             Snackbar.make(view, "New guest entered", Snackbar.LENGTH_LONG).show();
         } else {
             Snackbar.make(view, "Could not add new guest", Snackbar.LENGTH_LONG).show();
+        }
+
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
     }
 
@@ -98,7 +105,7 @@ public class NewGuestActivity extends AppCompatActivity {
 //
 //    private void displayAll() {
 //
-//        Cursor result = dbHelper.view_all();
+//        Cursor result = dbHelper.view_allguest();
 //
 //        if (result.getCount() == 0) {
 //            Log.d("Error", "Nothing to show");

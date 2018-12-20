@@ -14,11 +14,12 @@ import android.util.Log;
 public class TableDatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_Name = "urbanSpoon";
     private static final String availability_list = "table_availability";
-
     private static final String availability_list_col_1 = "ID";
     private static final String availability_list_col_2 = "Tablename";
     private static final String availability_list_col_3 = "Available";
-
+    private static final String guest_list = "guest";
+    private static final String guest_list_col_2 = "Name";
+    private static final String guest_list_col_3 = "Phno";
 
     public TableDatabaseHelper(Context context) {
         super(context, DB_Name, null, 29);
@@ -29,7 +30,8 @@ public class TableDatabaseHelper extends SQLiteOpenHelper {
         String query1 = "Create table " + availability_list + "(" + availability_list_col_1 + " Integer Primary key AutoIncrement, "
                 + availability_list_col_2 + " text, " + availability_list_col_3 + " Boolean )";
 
-
+        String query2 = "Create table " + guest_list + "(" + guest_list_col_2 + " text, " + guest_list_col_3 + " text )";
+        sqLiteDatabase.execSQL(query2);
         sqLiteDatabase.execSQL(query1);
 
     }
@@ -37,6 +39,7 @@ public class TableDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + availability_list);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + guest_list);
         onCreate(sqLiteDatabase);
     }
 
@@ -87,6 +90,44 @@ public class TableDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         Cursor res = sqLiteDatabase.rawQuery("Select * from " + availability_list, null);
+        Log.d("Inside view", "Display all");
+        return res;
+    }
+
+    //Below module adds new entry to guest table. Used when new guest arrives at the queue
+    public boolean add_entry_guest(String Name, String Phno) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(guest_list_col_3, Phno);
+        contentValues.put(guest_list_col_2, Name);
+
+//        long result = sqLiteDatabase.insert(guest_list, null, contentValues);
+        long result = sqLiteDatabase.insert(guest_list, null, contentValues);
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    //Retrieve first guest details from the list
+    public Cursor retrieve_next_guest() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor next_guest = sqLiteDatabase.rawQuery("Select * from " + guest_list + " limit 1", null);
+        return next_guest;
+    }
+
+    public int remove_guest_from_queue(String name) {
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        int deleted = sqLiteDatabase.delete("guest", "Name = ?", new String[]{name});
+        return deleted;
+    }
+
+    public Cursor view_allguest() {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        Cursor res = sqLiteDatabase.rawQuery("Select * from " + guest_list, null);
         Log.d("Inside view", "Display all");
         return res;
     }

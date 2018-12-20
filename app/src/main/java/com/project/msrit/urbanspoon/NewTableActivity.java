@@ -26,7 +26,7 @@ public class NewTableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_table);
         ButterKnife.bind(this);
-        GlobalVariable.getInstance().cntx = getApplicationContext();
+
         dbHelper = new TableDatabaseHelper(getApplicationContext());
     }
 
@@ -62,7 +62,7 @@ public class NewTableActivity extends AppCompatActivity {
 
 //    private void displayAll() {
 //
-//        Cursor result = dbHelper.view_all();
+//        Cursor result = dbHelper.view_allguest();
 //        if (result.getCount() == 0) {
 //            Log.d("Error", "Nothing to show");
 //        } else {

@@ -31,7 +31,6 @@ public class TableListActivity extends AppCompatActivity implements MyRecyclerVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_list);
         dbHelper = new TableDatabaseHelper(getApplicationContext());
-        GlobalVariable.getInstance().acitivity = this;
         displayAll();
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -47,6 +46,7 @@ public class TableListActivity extends AppCompatActivity implements MyRecyclerVi
         Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 
+    //Populate table content and put to a list
     private void displayAll() {
         GlobalVariable.getInstance().tablesList.clear();
         Cursor result = dbHelper.view_all();
